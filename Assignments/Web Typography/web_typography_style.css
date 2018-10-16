@@ -24,7 +24,7 @@ h1 {
 	font-size: 5em;
 	font-family:'Archivo Black', sans-serif;
 	color: transparent;
-    -webkit-text-stroke-width: .1px;
+    -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: rgba(0,0,0,0.5);
 }
 
