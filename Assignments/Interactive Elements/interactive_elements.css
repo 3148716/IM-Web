@@ -41,6 +41,15 @@ button:focus {
 
 
 
+
+
+/* Button icon properties */
+
+input:focus {
+	outline:0;
+}
+
+
 .icon {
 	width: 100vw;
 	height: 100vh;
@@ -115,38 +124,27 @@ html, body {
 
 
 /*text input*/
-
-
-/*input:focus {
-	outline:0;
-}
-
-
-.quiz {
+.answer {
+	margin: 21px;
 	position: absolute;
-	z-index: 10;
-	padding: 21px;
-}
-
-.colour {
-	min-width:500px;
+	min-width: 500px;
 	padding: 9px 9px;
-	color:black;
-	border-radius:21px;
+	color: black;
+	border-radius: 21px;
 	border: none;
 	background-color: rgba(255, 255, 255);
-	opacity:.2;
-	display:none;
+	opacity: .2;
+	z-index: 3;
 }
 
-.colour:hover {
+.answer:hover {
 	background-color: rgba(255, 255, 255, 0.5);
-	opacity:1;
+	opacity: 1;
 }
 
-.colour:focus {
+.answer:focus {
 	background-color: rgba(255, 255, 255, 0.5);
-	opacity:1;
+	opacity: 1;
 }
 
 
@@ -154,7 +152,7 @@ html, body {
 ::placeholder {
 	color: black;
 	font-size: 12px;
-}*/
+}
 
 
 

@@ -1,18 +1,91 @@
 // $(document).ready makes the javascript run when page loads.
 $(document).ready(function() {
+	var questions = {
+		"What is the first colour of the window on refresh?": "cyan",
+		"What is the colour after minimizing 4 times, and maximizing 3 times?": 1,
+		"What is the colour after maximizing once, and minimizing 3 times?": 2,
+		"What is the colour after minimizing 2 times, maximizing 3 times, and minimizing 4 times?": 3,
+		"What is the colour after maximizing 5 times?": -5,
+		"What is the colour after minimizing 5 times?": 5,
+		"What is the colour after minimizing 3 times, and maximizing 6 times?": -3,
+		"What is the colour after maximizing 5 times, and minimizing 3 times?": -2,
+		"What is the colour after maximizing once?": -1
+	};
+	var random = Math.floor(Math.random() * (Object.keys(questions).length - 1));
+    $('.answer').attr("placeholder", Object.keys(questions)[random]);
+    var randomAnswer = questions[Object.keys(questions)[random]];
 	// Part of the list your going through (so order stays the same whether your maximizing or minimzing)
+	var questionIndex = 0;
+	var questionNextIndex = 1;
 	var index = 0;
 	var nextIndex = 1;
 	// List of colours
 	var colours = ["#00e6da", "#003dd3", "#ffa1f5", "#ffffff", "#fff05f", "#c73938", "#7b3bcd", "#000000", "#3dc340"];
 
+	var colourToString = {
+		"#00e6da": "cyan",
+		"#003dd3": "blue",
+		"#ffa1f5": "pink",
+		"#ffffff": "white",
+		"#fff05f": "yellow",
+		"#c73938": "red",
+		"#7b3bcd": "purple",
+		"#000000": "black",
+		"#3dc340": "green"
+	}
+
+	var answer;
+
+	if (typeof randomAnswer === "string") {
+		answer = randomAnswer;
+	} else if (index + randomAnswer >= 0) {
+		if (index + randomAnswer < colours.length) {
+			answer = colourToString[colours[index + randomAnswer]];
+		} else {
+			answer = colourToString[colours[index + randomAnswer - colours.length]];
+		}
+	} else {
+		answer = colourToString[colours[index + randomAnswer + colours.length]];
+	}
+
+	$(".answer").keydown(function(event) {
+		if (event.keyCode === 13) {
+			if ($('.answer').val() === answer) {
+				alert("Congratulations");
+				// Play Sound Here
+				questionIndex = index;
+				questionNextIndex = nextIndex;
+				random = Math.floor(Math.random() * (Object.keys(questions).length - 1));
+				$('.answer').attr("placeholder", Object.keys(questions)[random]);
+				var randomAnswer = questions[Object.keys(questions)[random]];
+				if (typeof randomAnswer === "string") {
+					answer = randomAnswer;
+				} else if (index + randomAnswer >= 0) {
+					if (index + randomAnswer < colours.length) {
+						answer = colourToString[colours[index + randomAnswer]];
+					} else {
+						answer = colourToString[colours[index + randomAnswer - colours.length]];
+					}
+				} else {
+					answer = colourToString[colours[index + randomAnswer + colours.length]];
+				}
+				$('.answer').val("");
+			} else {
+				alert("Try Again");
+				$(".foreground").css("background-color", colours[questionIndex]);
+				$(".background").css("background-color", colours[questionNextIndex]);
+				index = questionIndex;
+				nextIndex = questionNextIndex;
+			}
+    	}
+	});
+
+
+
+
+
 	// When you click on the minimize button
 	$(".min_icon").click(function() {
-
-
-
-
-
 		// Disable buttons to prevent glitchy things
 		$(".min_icon").attr("disabled", true);
 		$(".max_icon").attr("disabled", true);
@@ -91,67 +164,6 @@ $(document).ready(function() {
 });
 
 
-
-
-
-
-
-
-// // Making random question appear on load
-// $(function(){
-//     var random = Math.floor(Math.random() * $('.colour').length);
-//     $('.colour').eq(random).show();    
-// });
-
-
-
-// // Enabling answer submission with enter key
-// $(document).ready(function() {
-//   $('.colour').keydown(function(event) {
-//     // Enter keyCode = 13,
-//     if (event.keyCode == 13) {
-//       this.form.submit();
-//       return false;
-//     }
-//   });
-
-// });
-
-
-
-
-// //quiz
-// function form(){
-// 	var cyan = document.getElementById("#00e6da").value;
-// 	var blue = document.getElementById("#003dd3").value;
-// 	var pink = document.getElementById("#ffa1f5").value;
-// 	var white = document.getElementById("#ffffff").value;
-// 	var yellow = document.getElementById("#fff05f").value;
-// 	var red = document.getElementById("#c73938").value;
-// 	var purple = document.getElementById("#7b3bcd").value;
-// 	var black = document.getElementById("#000000").value;
-// 	var green = document.getElementById("#3dc340").value;
-
-// 	var cyan_ans = cyan;
-// 	var blue_ans = blue;
-// 	var pink_ans = pink;
-// 	var white_ans = white;
-// 	var yellow_ans = yellow;
-// 	var red_ans = red;
-// 	var purple_ans = purple;
-// 	var black_ans = black;
-// 	var green_ans = green;
-
-// 		$("form").click(function(){
-// 			if ($("input[type=text]").val()==cyan_ans){
-// 				alert("Correct!");
-// 			}
-// 			else {
-// 				alert("Try Again");
-// 			}
-// 		});
-
-// }
 
 
 
