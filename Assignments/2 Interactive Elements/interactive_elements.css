@@ -1,0 +1,167 @@
+/* Centering buttons */
+
+.button-container {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 2;
+}
+
+
+
+/* Button properties */
+
+.button {
+	border: 5px solid white;
+    cursor: pointer;
+    width:88px;
+	border-radius:50%;
+	height:88px;
+}
+
+/*Disabling the blue outline around the button when clicked*/
+button:focus {
+	outline:0;
+}
+
+.min {
+	border-color:#e5a12b;
+	background-color:#ffbd35;
+}
+
+.max {
+	border-color:#00ae39;
+	background-color:#00cb4b;
+	margin-left:48px;
+}
+
+
+
+
+
+
+/* Button icon properties */
+
+input:focus {
+	outline:0;
+}
+
+
+.icon {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.min_icon {
+	height:88px;
+	width:88px;
+	right:140px;
+	top:2px;
+	opacity: 0;
+	transition: none;
+}
+
+.min_icon:hover {
+	opacity: 1;
+	transition: opacity 0.5s ease;
+}
+
+
+.max_icon {
+	height:88px;
+	width:88px;
+	right:0px;
+	top:1px;
+	margin-left:48px;
+	opacity: 0;
+	transition: none;
+}
+
+.max_icon:hover {
+	opacity: 1;
+	transition: opacity 0.5s ease;
+}
+
+
+
+
+
+
+
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.window {
+	height: 100vh;
+  	width: 100vw;
+ 	position: fixed;
+}
+
+.foreground {
+	background-color: #00e6da;
+	z-index: 1;
+}
+
+.background {
+	background-color: #003dd3;
+	z-index: 0;
+}
+
+
+
+
+
+/*text input*/
+.answer {
+	margin: 21px;
+	position: absolute;
+	min-width: 500px;
+	padding: 9px 9px;
+	color: black;
+	border-radius: 21px;
+	border: none;
+	background-color: rgba(255, 255, 255);
+	opacity: .2;
+	z-index: 3;
+}
+
+.answer:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+	opacity: 1;
+}
+
+.answer:focus {
+	background-color: rgba(255, 255, 255, 0.5);
+	opacity: 1;
+}
+
+
+
+::placeholder {
+	color: black;
+	font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

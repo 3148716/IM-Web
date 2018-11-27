@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Lekton');
+
+html, body {
+	margin: 0;
+	height:50000px;
+}
+
+
+
+#telescope {
+	position: fixed;
+	z-index: 50;
+	width: 110vw;		
+	height: 110vh;
+	left:-5vw;
+	top:-5vh;
+}
+
+#space {
+	position: fixed;
+	z-index: 0;
+	width: 100vw;		
+	height: 100vh;
+}
+
+
+.text {
+	position: fixed;
+	z-index: 100;
+	line-height: 1.2;
+	font-family: 'Lekton';
+	color: #0025FF;
+	font-size: 14px;
+}
+
+#left {
+
+}
+
+
+
+#station {
+	position:fixed;
+	top:21%;
+	left:21%;
+    z-index:21;
+}
+
+#moon {
+	position:fixed;
+	top:21%;
+	left:21%;
+    z-index:21;
+}
+
+#saturn {
+	position:fixed;
+	left:21%;
+    z-index:21;
+}
+
+#andromeda {
+	position:fixed;
+    z-index:21;
+}
+
+

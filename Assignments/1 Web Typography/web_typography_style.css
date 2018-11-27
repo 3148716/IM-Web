@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400i,700');
+
+body {
+	margin:500px 100px auto;
+	color:black;
+	font-family:;
+	height: 5000px;
+	background: linear-gradient(0deg, #D0D0D0 5%, #3cffba 88%);
+	padding-top: 30px;
+	max-width: 1920px;
+}
+
+#logo {
+	position: fixed;
+    top: 150px;
+    left: 350px;
+    width: 550px;
+}
+
+
+/* "Visiting DESIGNer Lecture Series" properties */
+h1 {
+	font-size: 5em;
+	font-family:'Archivo Black', sans-serif;
+	color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(0,0,0,0.5);
+}
+
+
+span {
+	color:black;
+	-webkit-text-stroke-width: 0px;
+	-webkit-text-stroke-color: transparent;
+	transition: .5s ease;
+}
+
+span:hover {
+	color:#ff005a;
+}
+
+
+
+#space {
+	padding-top:200px;
+}
+
+
+
+/* photos */
+.guests {
+	width:250px;
+	height:250px;
+	position: relative;
+	-webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 1;
+	display: block;
+	transition: .5s ease;
+	backface-visibility: hidden;
+}
+
+
+/* photos div wrap */
+.portraits {
+	float:left;
+	position: relative;
+  	height: 250px;
+  	width: 250px;
+}
+
+
+/* photo hover properties */
+.info {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.portraits:hover .guests {
+  opacity: 0.3;
+}
+
+.portraits:hover .info {
+  opacity: 1;
+}
+
+#info_text {
+  color:#a500ff;
+  font-size: 16px;
+  padding: 16px 32px;
+ 	font-family:'Archivo Black', sans-serif;
+ 	font-size:36px;
+ 	line-height: 1;
+}
+
+
+/* image hover alternate option
+
+.portraits:hover > .overlay {
+	position: absolute;
+    top: 0;
+    width:100%;
+    height:100%;
+    left: 0;
+    background-color:#a500ff;
+    opacity:0.5;
+    z-index: 100;
+    display: block;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 88px;
+  left: 0;
+  text-align: center;
+}
+
+#info_text {
+	color:black;
+	font-family:'Archivo Black', sans-serif;
+	font-size: 25px
+}
+*/
+
+
+/* individual photo properties */
+#sahre {
+	object-fit:none;
+	object-position: 50% 25%;
+	width: 250px;
+	height: 250px;
+}
+
+#krishnamurthy {
+	object-fit:cover;
+	object-position: 75% 0%;
+	width: 250px;
+	height: 250px;
+}
+
+
+
+/* speaker information properties */
+a {
+	font-family:'Archivo Black', sans-serif;
+	color:#a500ff;;
+	font-size:56px;
+	text-decoration: none;
+}
+
+p {
+	font-family:'Montserrat', sans-serif;
+	font-weight: 400;
+	font-style: italic;
+	line-height: 2;
+}
+
+
+.details {
+	position:relative;
+	margin:250px 250px auto;
+	max-width: 400px;
+}
+
+
+
+
+/*button or link cursor change on hover*/
+#cursor {
+    cursor:pointer;
+}
+
+
+
+
+/*arrow properties*/
+i {
+    border: solid #ff005a;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 400px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.next {
+	margin-top: 100px;
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    position: fixed;
+    bottom: 580px;
+    right: 1200px;
+}
+
+
+
+/*arrow colour change*/
+i:hover {
+  border: solid #a500ff;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 10px;
+  transition: .5s ease;
+}
+
+
+
+/*in-paragraph property*/
+.link {
+	font-family:'Archivo Black', sans-serif;
+	font-size:16px;
+}
